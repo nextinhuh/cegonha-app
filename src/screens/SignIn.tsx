@@ -27,12 +27,16 @@ export function SignIn() {
 
     return (
         <View className="flex-1 bg-slate-50">
-            <View className="flex items-center justify-center relative h-3/5 w-full bg-purple-700">
-                <Text>Cegonha</Text>
+            <View className="flex items-center justify-center relative h-3/5 w-full bg-purple-700 rounded-b-2xl">
+                <Text
+                    className="mt-80 text-6xl text-white mb-16"
+                    style={{ fontFamily: 'JosefinSlab_700Bold' }}>
+                    Cegonha
+                </Text>
 
                 <View
-                    className="relative bg-white h-2/4 items-center justify-center w-96 rounded-3xl p-8 shadow-2xl"
-                    style={{ elevation: 2 }}
+                    className="bg-white rounded-3xl w-96 p-8 shadow-2xl items-center justify-around"
+                    style={{ elevation: 10 }}
                 >
                     <Input
                         placeholder="E-mail"
@@ -44,19 +48,24 @@ export function SignIn() {
                         placeholder="Senha"
                         autoCapitalize="none"
                         keyboardType="email-address"
+                        className="mt-7"
                     />
 
                     <TouchableOpacity
-                        className="mt-3 w-full bg-red-300 items-center justify-center h-10 rounded-md"
+                        className="mt-7 w-80 bg-purple-800 items-center justify-center h-10 rounded-md"
                         onPress={createNewUser}
                     >
-                        <Text>
+                        <Text
+                            className="text-white text-xl"
+                            style={{ fontFamily: 'Roboto_700Bold' }}>
                             Entrar
                         </Text>
                     </TouchableOpacity>
 
                     <TouchableOpacity>
-                        <Text className="underline text-red-500 mt-8" >
+                        <Text
+                            className="underline mt-8 text-base"
+                            style={{ fontFamily: 'Roboto_700Bold' }} >
                             Não tem uma conta? Registre-se
                         </Text>
                     </TouchableOpacity>
