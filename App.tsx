@@ -16,11 +16,12 @@ import {
 import { SignIn } from './src/screens/SignIn';
 import { useCallback } from "react";
 import { View } from "react-native";
+import { Register } from "./src/screens/Register";
 
 SplashScreen.preventAutoHideAsync();
 
 export default function App() {
-  const app = initializeApp(firebaseConfig);
+  initializeApp(firebaseConfig);
   const [fontsLoaded] = useFonts({
     JosefinSlab_400Regular,
     JosefinSlab_600SemiBold,
@@ -42,7 +43,7 @@ export default function App() {
 
   return (
     <View className="flex-1" onLayout={onLayoutRootView}>
-      <SignIn />
+      <Register />
     </View>
   );
 }
