@@ -1,40 +1,16 @@
 import { Dimensions, Text, View } from "react-native";
 
 import Carousel from 'react-native-reanimated-carousel';
+import { ProfileHeader } from "../components/ProfileHeader";
 
 export function Dashboard() {
     const width = Dimensions.get('window').width - 40;
 
     return (
-        <View className="flex-1">
-            <View className="flex-row items-center justify-around mt-24 mb-8">
-                <View className="bg-yellow-400 rounded-lg w-32 h-16">
-                    <Text className="bg-white text-right mr-6 mt-3 pr-2 rounded-tr-md">Title 1</Text>
+        <>
+            <ProfileHeader />
 
-                    <Text
-                        className="text-white text-lg text-center"
-                        style={{ fontFamily: 'Roboto_500Medium' }}
-                    >Description 1</Text>
-                </View>
-
-                <View className="bg-cyan-400 rounded-lg w-32 h-16">
-                    <Text className="bg-white text-right mr-6 mt-3 pr-2 rounded-tr-md">Title 2</Text>
-
-                    <Text
-                        className="text-white text-lg text-center"
-                        style={{ fontFamily: 'Roboto_500Medium' }}>Description 2</Text>
-                </View>
-
-                <View className="bg-purple-700 rounded-lg w-32 h-16">
-                    <Text className="bg-white text-right mr-6 mt-3 pr-2 rounded-tr-md">Title 3</Text>
-
-                    <Text
-                        className="text-white text-lg text-center"
-                        style={{ fontFamily: 'Roboto_500Medium' }}>Description 3</Text>
-                </View>
-            </View>
-
-            <View className="w-full items-center mt-8">
+            <View className="flex-1 w-full items-center mt-4">
                 <Carousel
                     loop
                     width={width}
@@ -58,6 +34,6 @@ export function Dashboard() {
                     )}
                 />
             </View>
-        </View>
+        </>
     )
 }

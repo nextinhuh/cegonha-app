@@ -2,7 +2,6 @@ import { initializeApp } from "firebase/app";
 import { firebaseConfig } from "./src/config/firebase.config";
 import * as SplashScreen from 'expo-splash-screen';
 import { useCallback } from "react";
-import { Dashboard } from "./src/screens/Dashboard";
 import { NavigationContainer } from "@react-navigation/native";
 import {
   useFonts,
@@ -11,11 +10,13 @@ import {
   JosefinSlab_700Bold
 } from '@expo-google-fonts/josefin-slab';
 import {
+  Roboto_300Light,
   Roboto_400Regular,
   Roboto_500Medium,
   Roboto_700Bold
 } from '@expo-google-fonts/roboto';
 import Routes from "./src/routes";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -27,6 +28,7 @@ export default function App() {
     JosefinSlab_700Bold,
     Roboto_400Regular,
     Roboto_500Medium,
+    Roboto_300Light,
     Roboto_700Bold
   });
 
@@ -42,7 +44,9 @@ export default function App() {
 
   return (
     <NavigationContainer onReady={onLayoutRootView}>
-      <Routes />
+      <GestureHandlerRootView style={{ flex: 1 }}>
+        <Routes />
+      </GestureHandlerRootView>
     </NavigationContainer>
 
   );
