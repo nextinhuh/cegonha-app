@@ -1,8 +1,9 @@
 import React from 'react';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Dashboard } from '../screens/Dashboard';
+import { SignIn } from '../screens/SignIn';
 
-const AppNavigation = createNativeStackNavigator();
+const AppNavigation = createBottomTabNavigator();
 
 export default function AppRoutes() {
     return (
@@ -12,6 +13,7 @@ export default function AppRoutes() {
             }}
         >
             <AppNavigation.Screen name="Dashboard" component={Dashboard} />
+            <AppNavigation.Screen name="SignIn2" component={SignIn} />
         </AppNavigation.Navigator>
     );
 }
