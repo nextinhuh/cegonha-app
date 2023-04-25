@@ -17,6 +17,7 @@ import { SignIn } from './src/screens/SignIn';
 import { useCallback } from "react";
 import { View } from "react-native";
 import { Register } from "./src/screens/Register";
+import { Dashboard } from "./src/screens/Dashboard";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -43,7 +44,7 @@ export default function App() {
 
   return (
     <View className="flex-1" onLayout={onLayoutRootView}>
-      <Register />
+      <Dashboard />
     </View>
   );
 }
