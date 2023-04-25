@@ -2,8 +2,10 @@ import { Text, TextInput, TouchableOpacity, View } from "react-native";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import { Input } from "../components/Input";
+import { useNavigation } from "@react-navigation/native";
 
 export function SignIn() {
+    const navigation = useNavigation();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const auth = getAuth();
@@ -23,6 +25,10 @@ export function SignIn() {
                 const errorMessage = error.message;
                 // ..
             });
+    }
+
+    function handleMoveToSignUp(): void {
+        navigation.navigate('SignUp');
     }
 
     return (
@@ -62,7 +68,7 @@ export function SignIn() {
                         </Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={handleMoveToSignUp}>
                         <Text
                             className="underline mt-8 text-base"
                             style={{ fontFamily: 'Roboto_700Bold' }} >

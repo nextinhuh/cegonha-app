@@ -58,7 +58,6 @@ export function Dashboard() {
                     )}
                 />
             </View>
-
         </View>
     )
 }

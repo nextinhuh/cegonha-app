@@ -1,6 +1,9 @@
 import { initializeApp } from "firebase/app";
 import { firebaseConfig } from "./src/config/firebase.config";
 import * as SplashScreen from 'expo-splash-screen';
+import { useCallback } from "react";
+import { Dashboard } from "./src/screens/Dashboard";
+import { NavigationContainer } from "@react-navigation/native";
 import {
   useFonts,
   JosefinSlab_400Regular,
@@ -12,12 +15,7 @@ import {
   Roboto_500Medium,
   Roboto_700Bold
 } from '@expo-google-fonts/roboto';
-
-import { SignIn } from './src/screens/SignIn';
-import { useCallback } from "react";
-import { View } from "react-native";
-import { Register } from "./src/screens/Register";
-import { Dashboard } from "./src/screens/Dashboard";
+import Routes from "./src/routes";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -43,8 +41,9 @@ export default function App() {
   }
 
   return (
-    <View className="flex-1" onLayout={onLayoutRootView}>
-      <Dashboard />
-    </View>
+    <NavigationContainer onReady={onLayoutRootView}>
+      <Routes />
+    </NavigationContainer>
+
   );
 }
